@@ -20,7 +20,7 @@ import java.util.List;
 
 public class XmlReader {
 
-	public List<Student> parseData(String tagName,String path) throws ParserConfigurationException, SAXException, IOException{
+	public List<Student> parseData(String tagName, String path) throws ParserConfigurationException, SAXException, IOException {
 
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = factory.newDocumentBuilder();
@@ -28,18 +28,18 @@ public class XmlReader {
 		Document doc = builder.parse(file);
 		NodeList nodeList = doc.getDocumentElement().getChildNodes();
 		List<Student> list = new ArrayList<>();
-		for(int i=0;i<nodeList.getLength(); i++){
+		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
-			if(node instanceof Element){
+			if (node instanceof Element) {
 				Student student = new Student();
 				student.id = node.getAttributes().getNamedItem(tagName).getNodeValue();
 				NodeList childNodes = node.getChildNodes();
-				for(int j=0;j<childNodes.getLength();j++){
+				for (int j = 0; j < childNodes.getLength(); j++) {
 					Node cNode = childNodes.item(j);
-					if(cNode instanceof Element){
+					if (cNode instanceof Element) {
 						String content = cNode.getLastChild().getTextContent().trim();
 						String data = cNode.getNodeName();
-						switch(data){
+						switch (data) {
 							case "firstName":
 								student.firstName = content;
 								break;
@@ -60,9 +60,19 @@ public class XmlReader {
 	}
 
 	//This convert method need to be implemented.
-	public String convertIntToChar(String score){
+	public String convertIntToChar(String score) {
 		String grade = "";
 
+		int grades = Integer.parseInt(score);
+		if (grades >= 90) {
+			grade = "A";
+		} else if (grades >= 80) {
+			grade = "B";
+		} else if (grades >= 70) {
+			grade = "C";
+		}else{
+			grade = "F";
+		}
 
 		return grade;
 	}

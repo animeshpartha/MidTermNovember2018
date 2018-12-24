@@ -37,13 +37,13 @@ public class ProcessStudentInfo {
 
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		//Path of XML data to be read.
-		String pathSelenium  = System.getProperty("user.dir") +"/src/parser/selenium.xml";
+		String pathSelenium = System.getProperty("user.dir") + "/src/parser/selenium.xml";
 		String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
 		String tag = "id";
 		//Create ConnectToSqlDB Object
 		ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
 		//Declare a Map with List<String> into it.
-		Map<String,List<Student>> list = new LinkedHashMap<String,List<Student>>();
+		Map<String, List<Student>> list = new LinkedHashMap<String, List<Student>>();
 
 				/*Declare 2 ArrayList with Student data type to store Selenium student into one of the ArrayList and
 				  Qtp student into another ArrayList. */
@@ -59,26 +59,38 @@ public class ProcessStudentInfo {
 		seleniumStudents = xmlReader.parseData(tag, pathSelenium);
 
 		//Parse Data using parseData method and then store data into Qtp ArrayList.
+		qtpStudents = xmlReader.parseData(tag, pathQtp);
 
 		//add Selenium ArrayList data into map.
+		list.put("selenium", seleniumStudents);
 
 		//add Qtp ArrayList data into map.
-
+		list.put("qtp", qtpStudents);
 
 		//Retrieve map data and display output.
-
+		for (Map.Entry<String, List<Student>> value : list.entrySet()) {
+			List<Student> students = (List<Student>) list.get(value.getKey());
+			System.out.println("\n" + value.getKey() + " Students");
+			for (Student s : students) {
+				String id = s.getId();
+				String firstname = s.getFirstName();
+				String lastname = s.getLastName();
+				String grade = s.getScore();
+				System.out.println("Students (id=" + id + ") '" + firstname + "'  '" + lastname + "'\t\t\tgrade= " + grade);
+			}
+		}
 
 
 		//Store Qtp data into Qtp table in Database
-		connectToMongoDB.insertIntoMongoDB(seleniumStudents,"qtp");
+		connectToMongoDB.insertIntoMongoDB(seleniumStudents, "qtp");
 		//connectToSqlDB.insertDataFromArrayListToMySql(seleniumStudents, "qtp","studentList");
 
 		//Store Selenium data into Selenium table in Database
 
 		//Retrieve Qtp students from Database
 		List<Student> stList = connectToMongoDB.readStudentListFromMongoDB("qtp");
-		for(Student st:stList){
-			System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
+		for (Student st : stList) {
+			System.out.println(st.getFirstName() + " " + st.getLastName() + " " + st.getScore() + " " + st.getId());
 		}
 
 		//Retrieve Selenium students from Database

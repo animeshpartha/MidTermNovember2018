@@ -2,7 +2,7 @@ package design;
 
 public abstract class AbstractClass implements Employee{
 
-    final String empName = "John Smith";
+    final String empName = "Vann Desell";
     static String resignationDate = "01/01/2010";
 
     public void farewell () {
