@@ -19,7 +19,6 @@ public class Sort {
                 if (array[i] < array[min])
                     min = i;
             }
-
             int temp = array[min];
             array[min] = array[j];
             array[j] = temp;

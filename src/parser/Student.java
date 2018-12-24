@@ -1,8 +1,6 @@
 package parser;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
+public class Student {
 
 	/*
 	 * Student class have 4 variables which will be constructed as Student Object into List<Student>.
@@ -52,10 +50,10 @@ public class Student implements Serializable {
 		this.id = id;
 	}
 
-	
+
 	@Override
 	public String toString(){
 		return "Student" + "("+"id= "+id+")"+ firstName+" "+lastName+" "+" Grade = "+score;
 	}
-	
+
 }

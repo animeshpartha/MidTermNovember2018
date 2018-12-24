@@ -45,16 +45,16 @@ Can you make an Object from an Interface and Abstract class ? if not how do you 
 Answer: No we can not, these two classes used to declare and define methods.
 
 what is Access Specifier?
-Answer:
+Answer: Access specifier is keywords in object-oriented languages that set the accessibility of classes, methods, and other members
 
 What is OOP ? Define each feature of java OOP.
-Answer:
+Answer: Object oriented programming - Abstraction, Encapsulation, Inheritance and polymorphism.
 
 What is Java Package and which package is imported by default?
-Answer:
+Answer: A package is a namespace that organizes a set of related classes and interfaces. java.lang package is imported by default.
 
 What is API? Name list of API that you have used so far.
-Answer:
+Answer: A. Application Programming Interface, we used java API.
 
 Does java support multiple inheritance, explain why or why not?
 Answer:
