@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class DataReader {
 
@@ -25,16 +25,50 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
-
+		FileReader fr = null;
 		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader(textFile));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		String line;
+		String store = "";
+
+		try{
+			fr = new FileReader("\\Users\\marwaomar\\eclipse-workspace\\DbConnection\\MidtermNovember2018\\src\\data");
+
+
+		}catch(Exception e){
+			System.out.println("System was not able to find attached file ");
 		}
-		String text ;
-		while ((text = br.readLine())!=null){
-			System.out.println(text);
+
+		try{
+			br = new BufferedReader(fr);
+			while((line =br.readLine())!= null){
+				System.out.println(line);
+				store+= line;
+
+			}
+		}catch(Exception e){
+			System.out.println("System was not able to read attached file ");
 		}
+
+		String[] storeArray = store.split(" ");
+
+		Stack<String> myStack = new Stack<String>();
+		List<String> myList = new LinkedList<String>();
+		for(String element : storeArray){
+			myStack.add(element);
+			myStack.push(element);
+		}
+		System.out.println("The LinkedList LIFO");
+		Iterator<String> it = myList.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next() + " ");
+		}
+		System.out.println(" The Stack  LIFO");
+
+		while(!myStack.isEmpty()){
+			System.out.println(myStack.pop() + "  ");
+		}
+
+
 	}
+
 }

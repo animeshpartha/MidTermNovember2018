@@ -15,11 +15,11 @@ public class UseArrayList {
 
 		ArrayList<String> array = new ArrayList<>();
 		System.out.println("Adding values using add methods.......");
-		array.add("Ahmed");
-		array.add("Hasan");
+		array.add("Tom");
+		array.add("Mark");
 		System.out.println(array);
-		array.add(1,"Foysol");
-		array.add(3,"Noyon");
+		array.add(1,"Jayson");
+		array.add(3,"Jerry");
 		array.add("*****");
 		System.out.println(" ");
 		System.out.println("Printout the values using while loop with Iterator.....");
