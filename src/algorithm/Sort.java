@@ -7,8 +7,6 @@ public class Sort {
      * Please implement all the sorting algorithm. Feel free to add helper methods.
      * Store all the sorted data into one of the databases.
      */
-
-
     public int[] selectionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
         int[] list = array;
@@ -24,17 +22,14 @@ public class Sort {
             list[min] = list[j];
             list[j] = temp;
         }
-
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return list;
     }
-
     public int[] insertionSort(int[] array) {
         final long startTime = System.currentTimeMillis();
         int[] list = array;
-
         //implement here
         for (int i = 1; i < list.length; i++) {
             int temp = list[i];
@@ -46,7 +41,6 @@ public class Sort {
             }
             list[hole] = temp;
         }
-
 
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
@@ -69,16 +63,13 @@ public class Sort {
                 list[a] = list[a + 1];
                 list[a + 1] = temp;
             }
-
         }
-
 
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return list;
     }
-
 
     public int[] mergeSort(int[] array) {
         int[] list = array;
@@ -108,8 +99,6 @@ public class Sort {
         return result;
     }
 
-
-
     public static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
 
@@ -132,14 +121,9 @@ public class Sort {
 
     }
 
-
-
     public int [] quickSort(int [] array){
         int [] list = array;
         //implement here
-
-
-
         return list;
     }
 
@@ -147,28 +131,18 @@ public class Sort {
         int [] list = array;
         //implement here
 
-
-
         return list;
     }
-
 
     public int [] bucketSort(int [] array){
         int [] list = array;
         //implement here
-
-
-
-
         return list;
     }
 
     public int [] shellSort(int [] array){
         int [] list = array;
         //implement here
-
-
-
         return list;
     }
 

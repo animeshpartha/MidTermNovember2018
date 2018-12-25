@@ -8,7 +8,6 @@ public class Palindrome {
          */
         String str = "MADAM";
 
-
         int length = str.length();
         int i, begin, end, middle;
 
