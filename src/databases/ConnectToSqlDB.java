@@ -1,5 +1,6 @@
 package databases;
 
+import json.parser.NewsDataModel;
 import parser.Student;
 
 import java.io.FileInputStream;
@@ -106,12 +107,12 @@ public class ConnectToSqlDB {
         }
     }
 
-    public void insertDataFromStringToSqlTable(String ArrayData, String tableName, String columnName)
+    public void insertDataFromStringToSqlTable(List<NewsDataModel> ArrayData, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
-            ps.setString(1,ArrayData);
+            ps.setString(1, String.valueOf(ArrayData));
             ps.executeUpdate();
         } catch (IOException e) {
             e.printStackTrace();
