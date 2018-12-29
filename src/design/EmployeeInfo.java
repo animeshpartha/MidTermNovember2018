@@ -22,16 +22,20 @@ public class EmployeeInfo extends AbstractClass{
 	private String deptName;
 	private static double salary;
 	private char gender;
+	private int rating;
+
+
 
 
 	public EmployeeInfo () {}
 
-	public EmployeeInfo(String name, int employeeId, String deptName, char gender, double salary) {
+	public EmployeeInfo(String name, int employeeId, String deptName, char gender, double salary, int rating) {
 		this.name = name;
 		this.employeeId = employeeId;
 		this.deptName = deptName;
 		this.gender = gender;
 		this.salary=salary;
+		this.rating=rating;
 	}
 	/*
 	 * declare few static and final fields and some non-static fields
@@ -84,12 +88,12 @@ public class EmployeeInfo extends AbstractClass{
 
 	@Override
 	public int employeeId() {
-		return 0;
+		return employeeId;
 	}
 
 	@Override
 	public String employeeName() {
-		return null;
+		return empName;
 	}
 
 	public void assignDepartment() {
@@ -98,14 +102,25 @@ public class EmployeeInfo extends AbstractClass{
 	}
 
 	@Override
-	public int calculateSalary() {
-		return 0;
+	public double calculateSalary() {
+		return salary;
 	}
 
 	@Override
 	public void benefitLayout() {
+		System.out.println("Full time employees have great benefit package");
+	}
+
+	@Override
+	public void severance() {
+		System.out.println("This company does not provide great severance package");
+	}
+	@Override
+	public void performance() {
+		System.out.println("Employee performance is "+rating);
 
 	}
+
 
 	public String getDept(String dept) {
 		return deptName;
@@ -134,22 +149,22 @@ public class EmployeeInfo extends AbstractClass{
 		EmployeeInfo.companyName = companyName;
 	}
 	public void farewell (){
-
+		System.out.println("Farewell date is "+resignationDate);
 	}
 
 	@Override
 	public void farewell(int date) {
-		System.out.println("His farewell date was "+date);
+		System.out.println(name+"'s last day was"+resignationDate);
 
 	}
 	public void annualSalary () {
 		double yearlySalary = salary*12;
 		System.out.println(yearlySalary);
-		calculateEmployeeBonus(10);
+		calculateEmployeeBonus(10,50000.00);
 	}
 
-	private void calculateEmployeeBonus(int i) {
-	}
+	//private void calculateEmployeeBonus(int i) {
+	//}
 
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.

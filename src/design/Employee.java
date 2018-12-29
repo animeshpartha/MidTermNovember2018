@@ -18,9 +18,16 @@ public interface Employee {
 	public void assignDepartment();
 
 	//calculate employee salary
-	public int calculateSalary();
+	public double calculateSalary();
 
 	//employee benefit
 	public void benefitLayout();
+
+	//employee severance package
+	public void severance ();
+
+
+
+
 
 }
