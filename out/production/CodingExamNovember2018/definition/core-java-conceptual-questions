@@ -41,7 +41,7 @@ Answer: Path refers to system while classpath refers to the develop environment.
 What is the difference between an Interface and Abstract class?
 Answer: Interface has no defined methods while abstract is a hybrid class that can have abstract methods and define methods.
 
-Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+Can you make an Object from an Interface and Abstract class? if not how do you use it?
 Answer: No we can not, these two classes used to declare and define methods.
 
 what is Access Specifier?
@@ -65,7 +65,7 @@ Answer: Method overloading is a polymorphism aspect that change the logic of the
 Explain exceptions in java and how to handle it.
 Answer: Exception is eventual errors that can operate on java, we handle them by the try/catch method.
 
-What is static keyword in java? How it has been used in variables and methods ?
+What is static keyword in java? How it has been used in variables and methods?
 Answer: The static keyword in java is used for memory management mainly. The static keyword belongs to the class than instance of the class variable.
 
 What is final and how it has been used variables and methods?
@@ -76,7 +76,7 @@ Answer: Final is an entity definer
         - Finally is a block to access some block as the closing one.
         - Finalize is a package called by the garbage collector on an object.
 
-What is a constructor ?
+What is a constructor?
 Answer: Constructor is a block of code called when an instance of object created.
 
 Can we have multiple constructors in a class?
@@ -85,13 +85,13 @@ Answer: Yes.
 If we don't have a constructor declared, what is called during the object creation?
 Answer: The default constructor.
 
-What is "this" keyword in java ?
+What is "this" keyword in java?
 Answer: This is a keyword that refers to the reference variable.
 
 What is "super" keyword in java? How many possible way can you use?
 Answer: Super is keyword that calls the variables, constructor or methods from the child class to parent class.
 
-What is JVM stand for ?
+What is JVM stand for?
 Answer: Java virtual Machine.
 
 Is JVM platform independent?
@@ -100,7 +100,7 @@ Answer: Yes,
 What version of java are you using?
 Answer: java 11.0.1
 
-What is JAR stand for ?
+What is JAR stand for?
 Answer: Java Archive.
 
 What is the difference between JDK and JVM?
